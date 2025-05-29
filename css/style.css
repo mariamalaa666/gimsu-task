@@ -24,17 +24,9 @@ header{
     border: 1px solid rgba(255, 255, 255, 0.15);
     padding: 10px;
 }
-ul{
-    display: flex;
-    align-items: center;
-    gap: 30px;
-}
 .li-header{
     list-style: none;
     color:#E0E0E0;
-}
-.burger-icon{
-    display: none;
 }
 .div-header{
     display: flex;
@@ -88,12 +80,7 @@ ul{
 }
 .get-started-section-1{
     background: #D7FB00;
-    text-shadow: 
-        0 0 10px #d0ff00,
-        0 0 20px #fbff10,
-        0 0 30px #d2df28,
-        0 0 40px #fbff10,
-        0 0 70px #d2df28;
+    box-shadow: 0 0 20px #d0ff00;
     padding: 10px;
     border: none;
     border-radius: 20px;
@@ -143,6 +130,11 @@ h1{
     align-items: center;
     gap: 20px;
 }
+.nav-header .ul-header{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
 @media screen and (max-width:920px){
     .div-section-1{
         display: flex;
@@ -165,12 +157,25 @@ h1{
         top: 20%;
     }
 }
+.button-burger-icon{
+    display: none;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
 @media screen and (max-width:765px){
-    nav{
-        display: none;
+    .button-burger-icon{
+        display: block;
+        width: 30px;
     }
     .burger-icon{
+        width: 100%;
+    }
+    .nav-header .ul-header{
+        display: none;
+        flex-direction: column;
+    }
+    .button-burger-icon:focus + .ul-header{
         display: block;
-        width: 40px;
     }
 }
