@@ -1,3 +1,31 @@
+$slightlyDark-white: #E0E0E0;
+$slightlyDark-gray: #676868;
+$slightlyDark2-white: #E4DBDB;
+$white-color: #FFF;
+$blue-color: #3563E9;
+$brighYellow-color: #D7FB00;
+$brighYellow2-color: #d0ff00;
+$dark-gray: rgb(58, 58, 58);
+$border-color: (255, 255, 255, 0.15);
+/*mixin*/
+@mixin flex-spaceBetween{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+@mixin flex-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@mixin flex-align-center{
+    display: flex;
+    align-items: center;
+}
+@mixin flex-justify-center{
+    display: flex;
+    justify-content: center;
+}
 *{
     margin: 0;
     padding: 0;
@@ -15,34 +43,30 @@ body{
     padding-right: 8px;
 }
 header{
-    background-color: rgb(58, 58, 58);
+    background-color: $dark-gray;
     border-radius: 55px;
     margin-top: 20px;
     width: 85%;
     margin-left: auto;
     margin-right: auto;
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    border: 1px solid $border-color;
     padding: 10px;
 }
 .li-header{
     list-style: none;
-    color:#E0E0E0;
+    color: $slightlyDark-white;
 }
 .div-header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include flex1;
 }
 .div-language-header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include flex1;
     gap: 20px;
 }
 .button-login-header{
-    color: #3563E9;
+    color: $blue-color;
     border-radius: 5px;
-    background: #FFF;
+    background: $white-color;
     padding: 10px;
     border: none;
 }
@@ -79,67 +103,61 @@ header{
     z-index: 2;
 }
 .get-started-section-1{
-    background: #D7FB00;
-    box-shadow: 0 0 20px #d0ff00;
+    background: $brighYellow-color;
+    box-shadow: 0 0 20px $brighYellow2-color;
     padding: 10px;
     border: none;
     border-radius: 20px;
 }
 h1{
-    color: #E4DBDB;
+    color: $slightlyDark2-white;
     font-size: 40px;
 }
 .span-h1{
-    color: #E4DBDB;
+    color: $slightlyDark2-white;
     font-size: 45px;
-    color: #FFF;
+    color: $white-color;
     font-weight: 600;
 }
 .p-section-1{
-    color: #676868;
+    color: $slightlyDark-gray;
 }
 .watch-video-section-1{
-    color: #FFF;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    color: $white-color;
+    @include flex-center;
     gap: 15px;
     border: none;
     background: none;
 }
 .divs-number-box{
-    display: flex;
-    align-items: center;
+    @include flex-align-center;
 }
 .h3-div-number-box{
-    color: #FFF;
+    color: $white-color;
     font-size: 25px;
     margin-bottom: 15px;
 }
 .p-div-number-box{
-    color: #676868;
+    color: $slightlyDark-gray;
 }
 .divs-number-box div:not(:last-child){
-    border-right: solid 2px #676868;
+    border-right: solid 2px $slightlyDark-gray;
 }
 .div-number-box{
     padding: 15px;
 }
 .div-buttons-section-1{
-    display: flex;
-    align-items: center;
+    @include flex-align-center;
     gap: 20px;
 }
 .nav-header .ul-header{
-    display: flex;
-    align-items: center;
+    @include flex-align-center;
     gap: 30px;
 }
 @media screen and (max-width:920px){
     .div-section-1{
-        display: flex;
+        @include flex-justify-center;
         flex-direction: column;
-        justify-content: center;
     }
     .div1-section-1{
         width: 100%;
@@ -147,8 +165,7 @@ h1{
     }
     .div2-section-1{
         width: 100%;
-        display: flex;
-        justify-content: center;
+        @include flex-justify-center;
     }
     .img2-yellow-lines-section-1 {
         position: absolute;
